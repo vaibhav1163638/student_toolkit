@@ -8,6 +8,7 @@ import errorHandler from './middleware/errorHandler.js';
 import holidayRoutes from "./routes/holidayRoutes.js";
 import academicRouter from "./routes/academicRouter.js";
 import calendarRoutes from "./routes/calendarRoutes.js";
+import userEventRoutes from "./routes/userEventRoutes.js";
 import seedSubjectCatalog from "./utils/seedSubjectCatalog.js";
 dotenv.config({});
 
@@ -23,6 +24,7 @@ app.use('/api/user', userRoutes);
 app.use("/api/holidays", holidayRoutes);
 app.use("/api/academic-calendar", academicRouter);
 app.use("/api/calendar", calendarRoutes);
+app.use("/api/user-events", userEventRoutes);
 
 app.get('/', (req, res) => {
   res.json({ message: 'Student Toolkit API is running' });
